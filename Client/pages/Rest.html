@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Proyectos y Tareas</title>
+    <link rel="stylesheet" href="../css/rest.css">
+    <script src="../js/rest.js"></script>
+</head>
+<body>
+
+    <h1>Gestión de Proyectos y Tareas</h1>
+
+    <div class="container">
+        <!-- Formulario para crear proyectos -->
+        <div class="form-container">
+            <h2>Crear Proyecto</h2>
+            <label for="proyectoTitulo">Título:</label>
+            <input type="text" id="proyectoTitulo" placeholder="Nombre del Proyecto" required>
+            <br>
+            <label for="proyectoDescripcion">Descripción:</label>
+            <textarea id="proyectoDescripcion" placeholder="Descripción del Proyecto" required></textarea>
+            <br>
+            <label for="fechaCreacionProyecto">Fecha de Creación:</label>
+            <input type="date" id="fechaCreacionProyecto" required>
+            <br>
+            <label for="activoProyecto">Activo:</label>
+            <select id="activoProyecto">
+                <option value="1">Sí</option>
+                <option value="0">No</option>
+            </select>
+            <br>
+            <button id="btnCrearProyecto">Crear</button>
+            <button id="btnActualizarProyecto" hidden>Actualizar</button>
+            <button id="btnEliminarProyecto" hidden>Eliminar</button>
+            <button id="btnLimpiarProyecto">Limpiar</button>
+        </div>
+
+        <!-- Tabla de proyectos -->
+        <div class="table-container">
+            <h2>Proyectos</h2>
+            <table id="proyectosTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Fecha de Creación</th>
+                        <th>Activo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se cargarán los proyectos -->
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <div class="container hidden" id="cotainerTareas">
+        <div class="form-container">
+            <h2 id="titleFormTask">Crear Tarea</h2>
+            <label for="tareaTitulo">Título:</label>
+            <input type="text" id="tareaTitulo" placeholder="Título de la Tarea" required>
+            <br>
+            <label for="tareaDescripcion">Descripción:</label>
+            <textarea id="tareaDescripcion" placeholder="Descripción de la Tarea" required></textarea>
+            <br>
+            <label for="tareaEstado">Estado:</label>
+            <select id="tareaEstado">
+                <option value="pendiente">Pendiente</option>
+                <option value="en progreso">En Progreso</option>
+                <option value="completada">Completada</option>
+            </select>
+            <br>
+            <label for="tareaPrioridad">Prioridad:</label>
+            <select id="tareaPrioridad">
+                <option value="alta">Alta</option>
+                <option value="media">Media</option>
+                <option value="baja">Baja</option>
+            </select>
+            <br>
+            <label for="fechaCreacionTarea">Fecha de Creación:</label>
+            <input type="date" id="fechaCreacionTarea" required>
+            <br>
+            <label for="fechaVencimientoTarea">Fecha de Vencimiento:</label>
+            <input type="date" id="fechaVencimientoTarea" required>
+            <br>
+            <button id="btnCrearTarea">Crear Tarea</button>
+            <button id="btnActualizarTarea" hidden>Actualizar Tarea</button>
+            <button id="btnEliminarTarea" hidden>Eliminar Tarea</button>
+            <button id="btnLimpiarTarea">Limpiar</button>
+        </div>
+
+        <!-- Tabla de tareas -->
+        <div class="table-container">
+            <h2 id="tituloProyecto">Tareas</h2>
+            <table id="tareasTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Descripción</th>
+                        <th>Estado</th>
+                        <th>Prioridad</th>
+                        <th>Fecha de Creación</th>
+                        <th>Fecha de Vencimiento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se cargarán las tareas -->
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+</html>
