@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket - Proyectos</title>
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script src="../js/websocket.js"></script>
+    <link rel="stylesheet" href="../css/websocket.css">
+</head>
+<body>
+    <header>
+        <h1>Gestión de Proyectos Web Sockets</h1>
+        <button onclick="window.location.href='../../index.html'">Inicio</button>
+    </header>
+    <div class="container">
+        <div class="form-container">
+            <h2>Formulario de Proyecto</h2>
+            <form id="form-proyecto">
+                <input type="hidden" id="id">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required><br>
+
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" required></textarea><br>
+
+                <button type="submit">Guardar Proyecto</button>
+            </form>
+        </div>
+        <div class="table-container">
+            <h2>Lista de Proyectos</h2>
+            <table id="proyectos-table" border="1">
+               
+                <tbody>
+                    <!-- Los proyectos se cargarán dinámicamente aquí -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

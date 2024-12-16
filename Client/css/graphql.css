@@ -20,7 +20,16 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-
+header{
+    display: flex;
+    gap:2em;
+    justify-content: space-between;
+    justify-content: center;
+}
+header button{
+    width: 250px;
+    height: 50px;
+}
 body {
     background-color: #1D3C5A;
     color: var(--primary-color);

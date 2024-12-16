@@ -7,4 +7,8 @@ document.addEventListener('DOMContentLoaded',()=>{
     imgGraph.addEventListener('click',()=>{
         window.location.href = '../Client/pages/Graphql.html';
     })  
+    const imgWS = document.querySelector('#imgWebSocket');
+    imgWS.addEventListener('click',()=>{
+        window.location.href = '../Client/pages/WebSocket.html';
+    })  
 })

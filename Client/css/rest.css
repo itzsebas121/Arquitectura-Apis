@@ -13,7 +13,15 @@
     --button-bg: #3A6A8A;
     --button-bg-hover: #1D3C5A;
 }
-
+header{
+    display: flex;
+    gap:2em;
+    justify-content: space-between;
+}
+header button{
+    width: 250px;
+    height: 50px;
+}
 * {
     margin: 0;
     padding: 0;
