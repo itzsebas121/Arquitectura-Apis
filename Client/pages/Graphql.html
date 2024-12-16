@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Proyectos, Tareas y Comentarios</title>
+  <link rel="stylesheet" href="../css/graphql.css">
+  <script src="../js/graphqlapi.js"></script>
+</head>
+<body>
+
+  <h1>Gestión de Proyectos, Tareas y Comentarios</h1>
+
+  <div class="container">
+    <!-- Formulario de Proyecto -->
+    <div class="form-container">
+      <h2>Crear Proyecto</h2>
+      <form id="form-proyecto">
+        <input type="text" id="nombre" placeholder="Nombre del Proyecto" required>
+        <textarea id="descripcion" placeholder="Descripción del Proyecto"></textarea>
+        <label>
+          Activo
+          <input type="checkbox" id="activo" checked>
+        </label>
+        <button type="submit">Crear Proyecto</button>
+      </form>
+      <div class="table-container">
+        <h2>Proyectos</h2>
+        <div id="proyectos"></div>
+      </div>
+    </div>
+
+   
+  </div>
+
+  <div class="container">
+    <!-- Formulario de Tarea -->
+    <div class="form-container">
+      <h2>Crear Tarea</h2>
+      <form id="form-tarea">
+        <input type="number" id="proyecto_id_tarea" placeholder="ID del Proyecto" required>
+        <input type="text" id="titulo" placeholder="Título de la Tarea" required>
+        <textarea id="descripcion_tarea" placeholder="Descripción de la Tarea"></textarea>
+        <input type="text" id="estado" placeholder="Estado de la Tarea" required>
+        <input type="text" id="prioridad" placeholder="Prioridad de la Tarea" required>
+        <input type="date" id="fecha_vencimiento" placeholder="Fecha de Vencimiento">
+        <button type="submit">Crear Tarea</button>
+      </form>
+      <div class="table-container">
+        <h2>Tareas</h2>
+        <div id="tareas"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container">
+    <!-- Formulario de Comentario -->
+    <div class="form-container">
+      <h2>Crear Comentario</h2>
+      <form id="form-comentario">
+        <input type="number" id="tarea_id_comentario" placeholder="ID de la Tarea" required>
+        <textarea id="contenido_comentario" placeholder="Contenido del Comentario" required></textarea>
+        <button type="submit">Crear Comentario</button>
+      </form>
+      <div class="table-container">
+        <h2>Comentarios</h2>
+        <div id="comentarios"></div>
+      </div>
+    </div>
+
+    <!-- Mostrar Comentarios -->
+   
+  </div>
+
+</body>
+</html>
