@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliente SOAP - CRUD Proyectos</title>
+    <link rel="stylesheet" href="../css/soap.css">
+    <script src="../js/soap.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gestión de Proyectos SOAP</h1>
+            <button onclick="window.location.href='../../index.html'">Inicio</button>
+        </header>
+
+        <div class="main-content">
+            <div class="form-container">
+                <h2>Gestión de Proyecto</h2>
+                <div class="form-group">
+                    <label for="proyectoID">ID del Proyecto:</label>
+                    <input type="text" id="proyectoID" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="proyectoNombre">Nombre:</label>
+                    <input type="text" id="proyectoNombre">
+                </div>
+                <div class="form-group">
+                    <label for="proyectoDescripcion">Descripción:</label>
+                    <input type="text" id="proyectoDescripcion">
+                </div>
+                <div class="form-group">
+                    <label for="proyectoActivo">Activo:</label>
+                    <select id="proyectoActivo">
+                        <option value="true">Sí</option>
+                        <option value="false">No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="proyectoFecha">Fecha de Creación:</label>
+                    <input type="date" id="proyectoFecha">
+                </div>
+                <button id="createButton">Insertar Proyecto</button>
+                <button id="updateButton" disabled>Actualizar Proyecto</button>
+                <button id="deleteButton" disabled>Eliminar Proyecto</button>
+            </div>
+
+            <div class="table-container">
+                <button id="loadButton">Cargar Proyectos</button>
+                <div id="loading" class="loading" style="display: none;">Cargando...</div>
+                <table id="proyectosTable" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Fecha de Creación</th>
+                            <th>Activo</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

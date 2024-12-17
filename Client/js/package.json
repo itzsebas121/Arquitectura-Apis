@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "soap": "^1.1.7",
+    "sql": "^0.78.0",
+    "strong-soap": "^4.1.7"
+  }
+}

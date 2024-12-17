@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://localhost:5000/wsdl"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             targetNamespace="http://localhost:5000/wsdl"
+             name="ProyectoService">
+
+  <!-- Tipos complejos -->
+  <types>
+    <xsd:schema targetNamespace="http://localhost:5000/wsdl">
+      <xsd:complexType name="Proyecto">
+        <xsd:sequence>
+          <xsd:element name="id" type="xsd:int"/>
+          <xsd:element name="nombre" type="xsd:string"/>
+          <xsd:element name="descripcion" type="xsd:string"/>
+          <xsd:element name="fecha_creacion" type="xsd:string"/>
+          <xsd:element name="activo" type="xsd:boolean"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </types>
+
+  <!-- Mensajes -->
+  <message name="obtenerProyectosRequest"/>
+  <message name="obtenerProyectosResponse">
+    <part name="proyectos" type="xsd:string"/>
+  </message>
+
+  <message name="crearProyectoRequest">
+    <part name="nombre" type="xsd:string"/>
+    <part name="descripcion" type="xsd:string"/>
+    <part name="fecha_creacion" type="xsd:string"/>
+    <part name="activo" type="xsd:boolean"/>
+  </message>
+
+  <message name="crearProyectoResponse">
+    <part name="result" type="xsd:string"/>
+  </message>
+
+  <message name="actualizarProyectoRequest">
+    <part name="id" type="xsd:int"/>
+    <part name="nombre" type="xsd:string"/>
+    <part name="descripcion" type="xsd:string"/>
+    <part name="fecha_creacion" type="xsd:string"/>
+    <part name="activo" type="xsd:boolean"/>
+  </message>
+
+  <message name="actualizarProyectoResponse">
+    <part name="result" type="xsd:string"/>
+  </message>
+
+  <message name="eliminarProyectoRequest">
+    <part name="id" type="xsd:int"/>
+  </message>
+
+  <message name="eliminarProyectoResponse">
+    <part name="result" type="xsd:string"/>
+  </message>
+
+  <!-- Operaciones -->
+  <portType name="ProyectoServicePortType">
+    <operation name="obtener_proyectos">
+      <input message="tns:obtenerProyectosRequest"/>
+      <output message="tns:obtenerProyectosResponse"/>
+    </operation>
+
+    <operation name="crear_proyecto">
+      <input message="tns:crearProyectoRequest"/>
+      <output message="tns:crearProyectoResponse"/>
+    </operation>
+
+    <operation name="actualizar_proyecto">
+      <input message="tns:actualizarProyectoRequest"/>
+      <output message="tns:actualizarProyectoResponse"/>
+    </operation>
+
+    <operation name="eliminar_proyecto">
+      <input message="tns:eliminarProyectoRequest"/>
+      <output message="tns:eliminarProyectoResponse"/>
+    </operation>
+  </portType>
+
+  <!-- Enlace -->
+  <binding name="ProyectoServiceBinding" type="tns:ProyectoServicePortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="obtener_proyectos">
+      <soap:operation soapAction="http://localhost:5000/wsdl/obtener_proyectos"/>
+      <input>
+        <soap:body use="encoded" namespace="http://localhost:5000/wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://localhost:5000/wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding"/>
+      </output>
+    </operation>
+
+    <operation name="crear_proyecto">
+      <soap:operation soapAction="http://localhost:5000/wsdl/crear_proyecto"/>
+      <input>
+        <soap:body use="encoded" namespace="http://localhost:5000/wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://localhost:5000/wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding"/>
+      </output>
+    </operation>
+
+    <operation name="actualizar_proyecto">
+      <soap:operation soapAction="http://localhost:5000/wsdl/actualizar_proyecto"/>
+      <input>
+        <soap:body use="encoded" namespace="http://localhost:5000/wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://localhost:5000/wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding"/>
+      </output>
+    </operation>
+
+    <operation name="eliminar_proyecto">
+      <soap:operation soapAction="http://localhost:5000/wsdl/eliminar_proyecto"/>
+      <input>
+        <soap:body use="encoded" namespace="http://localhost:5000/wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="http://localhost:5000/wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding"/>
+      </output>
+    </operation>
+  </binding>
+
+  <!-- Puerto -->
+  <service name="ProyectoService">
+    <port name="ProyectoServicePort" binding="tns:ProyectoServiceBinding">
+      <soap:address location="http://localhost:5000/proyectos"/>
+    </port>
+  </service>
+</definitions>

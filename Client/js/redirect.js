@@ -11,4 +11,8 @@ document.addEventListener('DOMContentLoaded',()=>{
     imgWS.addEventListener('click',()=>{
         window.location.href = '../Client/pages/WebSocket.html';
     })  
+    const imgSoap = document.querySelector('#imgSoap');
+    imgSoap.addEventListener('click',()=>{
+        window.location.href = '../Client/pages/Soap.html';
+    })  
 })
