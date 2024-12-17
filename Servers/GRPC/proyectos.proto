@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";  // Importa el tipo Timestamp
+import "google/protobuf/empty.proto";  // Importa google.protobuf.Empty
+
+package proyectos;
+
+// Definición del mensaje Proyecto
+message Proyecto {
+    int32 id = 1;
+    string nombre = 2;
+    string descripcion = 3;
+    google.protobuf.Timestamp fecha_creacion = 4;  // Usar google.protobuf.Timestamp
+    bool activo = 5;
+}
+
+// Definición para la solicitud de creación de un proyecto
+message ProyectoRequest {
+    string nombre = 1;
+    string descripcion = 2;
+    bool activo = 3;
+}
+
+// Respuesta para la creación o actualización de un proyecto
+message ProyectoResponse {
+    string message = 1;
+}
+
+// Solicitud para obtener un proyecto por ID
+message GetProyectoByIdRequest {
+    int32 id = 1;
+}
+
+// Respuesta que contiene una lista de proyectos
+message GetProyectosResponse {
+    repeated Proyecto proyectos = 1;
+}
+
+// Servicio de los proyectos
+service ProyectoService {
+    // Método para obtener todos los proyectos
+    rpc GetProyectos (google.protobuf.Empty) returns (GetProyectosResponse);  // Uso de google.protobuf.Empty
+    
+    // Método para obtener un proyecto por ID
+    rpc GetProyectoById (GetProyectoByIdRequest) returns (Proyecto);
+    
+    // Método para crear un nuevo proyecto
+    rpc CreateProyecto (ProyectoRequest) returns (ProyectoResponse);
+    
+    // Método para actualizar un proyecto existente
+    rpc UpdateProyecto (Proyecto) returns (ProyectoResponse);
+    
+    // Método para eliminar un proyecto
+    rpc DeleteProyecto (GetProyectoByIdRequest) returns (ProyectoResponse);
+}

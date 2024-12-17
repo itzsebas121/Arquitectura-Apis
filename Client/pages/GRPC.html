@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gRPC Web Client</title>
+    <script src="https://unpkg.com/grpc-web"></script>
+</head>
+<body>
+    <h1>Proyectos</h1>
+    <ul id="proyectos-list"></ul>
+
+    <script>
+        const { ProyectoServiceClient } = require('./proyectos_grpc_web_pb');
+        const { GetProyectosRequest } = require('./proyectos_pb');
+
+        const client = new ProyectoServiceClient('http://localhost:8080', null, null);
+        const request = new GetProyectosRequest();
+
+        client.getProyectos(request, {}, (err, response) => {
+            if (err) {
+                console.error('Error al obtener proyectos:', err);
+            } else {
+                const proyectosList = document.getElementById('proyectos-list');
+                response.getProyectosList().forEach(proyecto => {
+                    const li = document.createElement('li');
+                    li.textContent = proyecto.getNombre();
+                    proyectosList.appendChild(li);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

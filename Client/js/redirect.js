@@ -15,4 +15,8 @@ document.addEventListener('DOMContentLoaded',()=>{
     imgSoap.addEventListener('click',()=>{
         window.location.href = '../Client/pages/Soap.html';
     })  
+    const imgMQTT = document.querySelector('#imgMQTT');
+    imgMQTT.addEventListener('click',()=>{
+        window.location.href = '../Client/pages/MQTT.html';
+    })  
 })

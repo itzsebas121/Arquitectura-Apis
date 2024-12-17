@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "@grpc/grpc-js": "^1.12.4",
+    "@grpc/proto-loader": "^0.7.13",
     "fs": "^0.0.1-security",
     "http": "^0.0.1-security",
     "soap": "^1.1.7",

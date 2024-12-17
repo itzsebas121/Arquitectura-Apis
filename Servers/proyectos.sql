@@ -27,7 +27,6 @@ CREATE TABLE Comentarios (
     CONSTRAINT FK_Comentarios_Tareas FOREIGN KEY (tarea_id) REFERENCES Tareas(id)
 );
 
--- Inserción de datos en la tabla Proyectos
 INSERT INTO Proyectos (nombre, descripcion, fecha_creacion, activo)
 VALUES 
 ('Proyecto de Web', 'Página para gestionar pedidos de gas', '2024-12-01T00:00:00.000+00:00', 1);
